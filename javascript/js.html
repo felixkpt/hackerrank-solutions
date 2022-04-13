@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    function countingValleys(steps, path) {
+        // Write your code here
+        if ( 2 < steps && steps < Math.pow(10, 6) ) {
+
+
+            let arr = path.split('');
+            console.log(arr);
+            // for (i=0; i<arr.length; i++) {
+            //     let
+            // }
+
+        }
+
+    }
+
+    let path = "UDDDUDUU";
+    let steps = 8;
+    console.log(countingValleys(steps, path));
+
+   
+    function pageCount (n,p) {
+        var ref = p - 0 <= n - p ? 'f' : 'b';
+        var int = Math.floor(p/2)
+        if (ref == 'f') {
+            int = Math.floor(p/2)
+        } else {
+            int = Math.ceil((n - p) / 2)
+        }
+        return int
+    }
+    console.log(pageCount(6,5));
+    // function sockMerchant(n, ar) {
+    // // Your code here
+    //     let numbers = {};
+    //     for (var i=0; i<n; i++) {
+    //         var val = ar[i];
+    //
+    //             numbers[val] = numbers[val] ? ( numbers[val] += 1 ) : 1;
+    //     }
+    //
+    //     let nums = [];
+    //
+    //     // console.log(numbers);
+    //
+    //    let array = Object.entries(numbers);
+    //     // console.log(array);
+    //         array.forEach( (val, key) => {
+    //             // console.log(val)
+    //             let trg = val[1];
+    //             if (trg > 1) {
+    //                 nums.push(Math.floor(trg/2));
+    //             }
+    //             // console.log(trg);
+    //
+    //         })
+    //
+    //     let pairs = nums.reduce(
+    //         (prev, next) => {
+    //             return (prev + next)
+    //         }
+    //     , 0);
+    //
+    //         return pairs;
+    //
+    // }
+    //
+    // let ar = [10,10,10,10,10.5, 10.5];
+    // let n = ar.length;
+    //
+    // console.log(sockMerchant(n, ar));
+</script>
+</body>
+</html>

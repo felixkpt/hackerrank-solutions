@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+//         function encrypt(word) {
+        
+//         let arr = word.split("");
+
+//         let converted = arr.reduce(function (wordAsciiArr, current_string, index) {
+//             let integer = current_string.charCodeAt(0)
+//             if (index == 0) {
+//                 wordAsciiArr.push(integer + 1)
+//             }else{
+//                 var to_push = wordAsciiArr[index - 1] + integer
+//                 wordAsciiArr.push(to_push)
+//             }
+
+//             return wordAsciiArr
+//         }, [])
+
+//         let encrypted = "";
+//         for (var i=0; i<converted.length; i++) {
+//             let integer = converted[i];
+//             let char = String.fromCharCode(integer);
+
+//             counter = 0;
+//             while (char.match(/[a-z]/) == null || (char.toLowerCase() != char && char.match(/[a-z]/)  == null)) {
+//                 // alert('sdd')
+//                 char = String.fromCharCode(integer -= 26);
+//                 counter ++;
+//                 if (counter > 256) {
+//                     break;
+//                 }
+//             }
+            
+//             encrypted = encrypted.concat(char);
+            
+//         }
+
+//         return encrypted;
+
+//         }
+
+
+// // console.log(encrypt('hellomrbiwotthowareyoudoingtoday'));
+
+// // console.log(decrypt('ifjnuzjdetamyyfunxulsfbijpougnjct'));
+
+
+
+//         function decrypt(word) {
+//             // your code goes here
+
+//             // 1. split word into array of letters
+//             let arr = word.split("");
+
+//             // 2. delcare variable to hold final decrypted word
+//             let decrypted = "";
+            
+//             // 3. check if length of supplied word if at least 1 else return empty string
+//             if (arr.length > 0) {
+                        
+
+//                 // 4. Step 1 converting every letter to its ASCII value and then for every letter from the second one to the last one, add the value of the previous letter.
+//                 let converted = [];
+//                 for (var i=0; i<arr.length; i++) {
+//                     let char = arr[i];
+//                     let integer = char.charCodeAt(0);
+
+//                     // converting the first letter and pushing to the converted array
+//                     if (i == 0) {
+//                         converted.push(integer);
+//                     }else {
+//                         // converting the subsequent letters then add to the previous item in the converted array, and pushing to the converted array
+//                         let temp_int = (integer - converted[i - 1]);
+//                         let temp_str = String.fromCharCode(temp_int);
+                        
+//                         // while loop to ensure that converted string represent a lowercase latin letter only
+//                         while (temp_str.match(/[a-z]/) == null || (temp_str.toLowerCase() != temp_str && temp_str.match(/[a-z]/)  == null)) {
+                            
+//                             temp_int += 26;
+                            
+//                             temp_str = String.fromCharCode(temp_int);
+//                         }
+
+//                         converted.push(converted[i - 1] + temp_int);
+
+//                     }
+                    
+//                 }
+                
+//                 // 5. Converting the ASCII back to letters
+//                 decrypted = converted.reduce(function (wordAsciiArr, current_int, index) {
+//                     let integer = current_int;
+//                     // for the first item we just need to subract 1 from it since we added 1 earlier then, convert to letter representation
+//                     if (index == 0) {
+//                         wordAsciiArr.push(String.fromCharCode(integer - 1))
+//                     }else{
+//                         // here we subtract previous item in our converted array from current integer then convert it to latin letter representation
+//                         var integer_real = integer - converted[index - 1];
+//                         // console.log(integer - converted[index - 1], );return ;
+//                         wordAsciiArr.push(String.fromCharCode(integer_real))
+//                     }
+
+//                     return wordAsciiArr
+//                 }, []).reduce( 
+//                     (prev, next) => prev + next 
+//                     );
+//             }
+//             return decrypted;
+//         }
+
+
+//        let word = "hjjfhj";
+//        word = encrypt(word);
+//     //    console.log(word);
+
+//     //    console.log(decrypt(word));
+    
+//     // console.log('crime'.length)
+
+// //     function decrypt2(word) {
+// //         // your code goes here
+// //         let arr = [];
+// //         for(let i = 0; i < word.length; i++){
+// //             let code = word.charCodeAt(i)
+// //             arr.push(code);
+// //         }
+// // console.log(arr)
+// //         // arr map
+// //         let added_26 = arr.reduce(
+// //             (prev, current, index) => {
+                
+// //                 if ( index == 0) {
+// //                     prev.push(to_push);
+// //                 }else {
+// //                     var to_push = current;
+// //                     // let us check if this current ASCII converted back to letter is a lowercase latin letter
+// //                     let temp_str = String.fromCharCode(current);
+// //                     while (temp_str.match(/[a-z]/) == null) {
+// //                         temp_int += 26;
+// //                         temp_str = String.fromCharCode(current_temp);
+                        
+// //                     }
+// //                     res = prev[index - 1] + current;
+// //                 }
+
+// //                 return [...res];
+// //             }
+// //         , {})
+
+// //         console.log(added_26);
+// //     }
+
+// //     console.log(decrypt2('crime'))
+    
+    
+// // function decrypt(word) {
+// //   // your code goes here
+// //   let arr = [];
+// //   for(let i = 0; i < word.length; i++){
+// //     let code = word.charCodeAt(i)
+// //     arr.push(code);
+// //   }
+// //   console.log(arr)
+  
+// //   let arr2 = [];
+// //   let count = 0
+  
+// //   for(let i = 0; i < arr.length; i++){
+// //     value = arr[i]
+// //     while(count < value){
+// //       count+= 26
+// //     }
+    
+// //     if(i !== arr.length - 1){
+// //       arr[i+1] = arr[i+1] + count
+// //       console.log(arr[i+1])
+// //     }
+// //     count = 0
+    
+// //   }
+// //   console.log(arr)
+// // }
+// // console.log(decrypt('crime'));
+// function decrypt3 (word) {
+// let encoded = (new TextEncoder).encode(word)
+// let arr = [];
+// encoded.map((item) => {
+// arr.push(item);
+// });
+// let toBeconverted = arr[1] - arr[0];
+// while (!(new TextDecoder).decode(toBeconverted).match('![A-Z]!')) {
+//     toBeconverted += 26;
+// }
+// return toBeconverted;
+// }
+// console.log(decrypt3('derick'))
+
+
+
+
+    </script>
+    sdsd
+</body>
+</html>

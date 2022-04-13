@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost/tutorials/laravel-sanctum-api/public/api/cars" method="post">
+        <input type="text" name="name" value="felix kiptoo">
+        <input type="text" name="email" value="felixkiptoo@example.com">
+        <input type="password" name="password" value="1234">
+        <input type="password" name="password_confirmation" value="1234">
+
+        <input type="submit" name="action" value="Save">
+    </form>
+    <script src="jquery.min.js"></script>
+
+    <script>
+
+    jQuery(document).ready(function($) {
+            
+        $('form').submit(function(e) {
+            e.preventDefault();
+
+            var request = new XMLHttpRequest();
+            var params = "UID=CORS&name=CORS";
+
+            request.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                }
+            };
+
+            request.open('POST', $(this).attr('action'), true);
+            request.setRequestHeader('Authorization', 'Bearer 6|f1a121239caeddc18ee61e2fb9b88318ff7adb5bc425c680e297d3f573e7e487sdsd');
+            request.setRequestHeader("Content-type", "application/json");
+            request.setRequestHeader("Accept", "application/json");
+            request.withCredentials = true
+
+            request.send(params);
+            
+            console.log(request)
+
+        })
+        
+        })
+
+    </script>
+
+    <script>
+        function encrypt(word) {
+        let step1 = [];
+        for (var i=0; i< word.length; i++) {
+            step1.push(word.charCodeAt(i));
+        }
+        // console.log(step1);
+        let step2 = step1.reduce(function (output, current, index) {
+            if (index == 0) {
+                
+                output.push(current + 1)
+            }else{
+                output.push(output[index - 1] + current)
+                // console.log(current);
+            }
+            return output;
+        }, [])
+        // console.log(step2)
+        let step3 = step2.reduce(function (output, current, index) {
+            if (index == 0) {
+                output.push(current)
+            }else{
+
+                while (current > 122) {
+                current -= 26;
+                }
+                output.push(current)
+            }
+            return output;
+        }, [])
+        // console.log(step3);
+        let encrypted_message = step3.reduce((prev,current) => prev + String.fromCharCode(current), '');
+        // console.log(encrypted_message)
+        return encrypted_message;
+}
+
+console.log(encrypt('crime'))
+
+
+function encrypt2 (word) {
+step1 = [];
+for (let j=0; j<word.length; j++) {
+    // console.log(word.charCodeAt(j))
+    step1.push(word.charCodeAt(j))
+
+}
+
+// console.log(q);
+
+let step2 = [step1[0]+1];
+for (var i=1; i<step1.length; i++) {
+step2.push(step1[i] + step2[i - 1])
+}
+
+step3 = [step2[0]];
+// 97-122
+for (let i =1; i<step2.length; i++) {
+while (step2[i] >  122 ){
+    step2[i] -=26
+}
+
+step3.push(step2[i]);
+}
+let ans = step3.reduce((prev,current) => prev + String.fromCharCode(current), '');
+return ans;
+}
+console.log(encrypt2('crime'))
+// function decrypt(word) {
+//         let step1 = [];
+//         for (var i=0; i< word.length; i++) {
+//             step1.push(word.charCodeAt(i));
+//         }
+//         // console.log(step1);
+//         let step2 = step1.reduce(function (output, current, index) {
+//             if (index == 0) {
+//                 output.push(current)
+//             }else{
+//                 var initial = output[0];
+                
+//                 // 10 + 26x = y - 100;
+
+//                 while (current - initial < 122 && notupper) {
+//                 current += 26;  
+//                 }
+//                 output.push(current)
+//             }
+//             return output;
+//         }, [])
+//         console.log(step2)
+//         let step3 = step2.reduce(function (output, current, index) {
+//             if (index == 0) {
+//                 output.push(current)
+//             }else{
+
+//                 while (current > 122) {
+//                 current -= 26;
+//                 }
+//                 output.push(current)
+//             }
+//             return output;
+//         }, [])
+//         // console.log(step3);
+//         let answer = step3.reduce((prev,current) => prev + String.fromCharCode(current), '');
+//         // console.log(answer)
+//         return answer;
+// }
+
+// console.log(decrypt('dnotq'))
+
+    </script>
+
+</body>
+</html>

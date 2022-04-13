@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+const convertFrom24To12Format = (time24) => {
+  const [sHours, minutes, another] = time24.match(/([0-9]{1,2}):([0-9]{2})/).slice(1);
+  q =  time24.match(/([0-9]{1,2}):([0-9]{2})/).slice(1);;
+  console.log(q.push(2));
+  const period = +sHours < 12 ? 'AM' : 'PM';
+  const hours = +sHours % 12 || 12;
+
+  return `${hours}:${minutes} ${period}`;
+}
+var timeString = "10:00";
+
+console.log(convertFrom24To12Format(timeString));
+
+var timeString = "14:00:00";
+var H = timeString.substr(0, 2);
+var h = H % 12 || 12;
+var ampm = (H < 12 || H === 24) ? "AM" : "PM";
+// timeString = h + timeString.substr(2, 3) + ampm;
+
+// console.log(timeString.indexOf(":"));
+
+
+
+// console.log(navigator.language)
+        // let data = new Date('12:00:00');
+//         const timeString = '23:01:00'
+// // Prepend any date. Use your birthday.
+// const timeString12hr = new Date('3030-01-01 ' + timeString + 'Z')
+//   .toLocaleTimeString('en-US',
+//     {timeZone:'UTC',hour12:true,hour:'numeric',minute:'numeric'}
+//   );
+//             console.log(timeString12hr)
+    </script>
+</body>
+</html>

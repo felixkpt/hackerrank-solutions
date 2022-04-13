@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+// var yourself = {
+//     fibonacci : function(n) {
+//         if (n === 0) {
+//             return 0;
+//         } else if (n === 1) {
+//             return 1;
+//         } else {
+//             let golden_ratio = 1.61803398875;
+//             let ans;
+//             ans = Math.round((Math.pow(golden_ratio, n) - (Math.pow(1 - golden_ratio, n))) / Math.sqrt(5));
+//             return ans
+//         }
+//     }
+// };
+
+
+var yourself = {
+    fibonacci : function(n) {
+        if (n === 0) {
+            return 0;
+        } else if (n === 1) {
+            return 1;
+        } else {
+            let arr = [0, 1]
+            // for (var i=1; i<n; i++) {
+            //     arr.push(arr[i - 1 ] + arr[i]);
+            // }
+
+            let i = 1;
+
+            while (i < n) {
+
+                arr.push(arr[i - 1 ] + arr[i]);
+                i ++;
+            }
+            // arr = arr.slice(3,arr[arr.length - 1]);
+            return arr[arr.length - 1];
+         }
+    }
+};
+
+// 9227467
+// console.log(yourself.fibonacci(5));
+
+let reg = new RegExp('^1(..$)')
+console.log('101001'.match(reg))
+
+// let exam = {
+//     solution: (n) => {
+//         if (0 < n && n <= 2147483647) {
+//             let binary = n.toString(2);
+            
+//             let zeros = binary.m
+
+
+
+//         }
+
+//         return 0;
+//     }
+// }
+
+// console.log(exam.solution(529));
+    </script>
+</body>
+</html>
