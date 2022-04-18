@@ -42,19 +42,25 @@ $bn = [[1, 5], [1, 6], [2, 4]];
 // $bn = [[1, 6], [2, 7], [3, 8], [4, 9], [2, 6]];
 
 
-var_dump(componentsInGraph($bn));
+// var_dump(componentsInGraph($bn));
 // die;
-// function final3($bg) {
-//         $conns = [];
-//         for ($i=0; $i<count($bg); $i++) {
-//             for ($j=0; $j<count($bg[$i]); $j++) {
-//                 if (!in)
-//             }
-//         }
+function final3($bg) {
+        $conns = [];
+        for ($i=0; $i<count($bg); $i++) {
+            for ($j=0; $j<count($bg[$i]); $j++) {
+                $val = $bg[$i][$j];
+                if (!in_array($val, $bg)) {
+                    $conns[]  = [$val];
+                    echo 'exists';
+                }                
+              
+            }
+        }
+        return $conns;
 
-// }
-// $bg = [[1,5], [1,6], [2,4]];
-// final3($bg);
+}
+$bg = [[1,5], [1,6], [2,4]];
+print_r(final3($bg));
 
 
 // <?php function response( $input ) {

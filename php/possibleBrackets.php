@@ -27,5 +27,5 @@ function possibleBrackets($n) {
 
 
 $res = [];
-$n = 3;
+$n = 8;
 var_dump(possibleBrackets($n));

@@ -1,39 +1,28 @@
 <?php 
+/*
+ * Complete the 'saveThePrisoner' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts following parameters:
+ *  1. INTEGER n
+ *  2. INTEGER m
+ *  3. INTEGER s
+ */
 
 function saveThePrisoner($n, $m, $s) {
     // Write your code here
-// 1 2 3 4 5
+    // 1 2 3 4 5
 
     if (1 <= $n && $n <= pow(10, 9) && 1 <= $m && $m <= pow(10, 9) && 1 <= $s && $s <= $n) 
     {
-
-        // n = prisoners ;
-        // m = candies ;
-        // s = pos;
-        // $spinner = $m % $n ;
-    
-        // if ($spinner == 0) {
-        //     $k = $s + ($n  - 1);
-        //     if ($k > $n) {
-        //         $k = $k - $n;
-        //     }
-        //     return $k;
-        // }else {
-        //     echo "Proceed---><br>";
-        // }
-
-        // var_dump($spinner);die;
         if ($s + ($m - 1) <= $n) {
             return $s + ($m - 1);
         }else{
             $rem  = $m - (($n + 1) - $s);
-            while ($rem > $n) {
-                $rem -= $n;
-            }
+            $rem = $rem % $n > 0 ? $rem % $n : $n;
             return $rem;
         }
-
-        }
+    }
         
 }
 
